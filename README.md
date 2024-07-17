@@ -1,0 +1,1 @@
+npx loff --- -c ./config.ts
