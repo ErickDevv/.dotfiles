@@ -1,5 +1,0 @@
-###
-GET http://localhost:8082/api/items
-
-###
-GET http://localhost:8082/api/items/1/quantity/2
