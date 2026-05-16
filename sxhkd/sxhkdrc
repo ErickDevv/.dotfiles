@@ -4,6 +4,9 @@ super + Return
 super + d
     rofi -show drun
 
+super + Tab
+    rofi -show window
+
 super + q
     bspc node -c
 

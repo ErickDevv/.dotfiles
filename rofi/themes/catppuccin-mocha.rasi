@@ -1,0 +1,127 @@
+* {
+    /* Catppuccin Mocha */
+    crust:      #11111b;
+    base:       #1e1e2e;
+    surface0:   #313244;
+    surface1:   #45475a;
+    text:       #cdd6f4;
+    subtext1:   #bac2de;
+    blue:       #89b4fa;
+    red:        #f38ba8;
+    green:      #a6e3a1;
+    yellow:     #f9e2af;
+
+    background-color: transparent;
+    text-color:       @text;
+}
+
+window {
+    background-color: @crust;
+    border:           2px solid;
+    border-color:     @blue;
+    border-radius:    12px;
+    width:            520px;
+    location:         center;
+    anchor:           center;
+    x-offset:         0;
+    y-offset:         0;
+}
+
+mainbox {
+    background-color: transparent;
+    padding:          18px;
+    spacing:          10px;
+    children:         [inputbar, listview];
+}
+
+inputbar {
+    background-color: @base;
+    border-radius:    8px;
+    padding:          10px 14px;
+    spacing:          8px;
+    children:         [prompt, entry];
+}
+
+prompt {
+    background-color: transparent;
+    text-color:       @blue;
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         @text;
+    placeholder:        "Buscar aplicaciones...";
+    placeholder-color:  @subtext1;
+}
+
+listview {
+    background-color: transparent;
+    lines:            8;
+    columns:          1;
+    spacing:          2px;
+    scrollbar:        false;
+    padding:          4px 0;
+}
+
+element {
+    background-color: transparent;
+    border-radius:    6px;
+    padding:          8px 10px;
+    spacing:          10px;
+    children:         [element-icon, element-text];
+    cursor:           pointer;
+}
+
+element-icon {
+    background-color: transparent;
+    size:             24px;
+    vertical-align:   0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:       @text;
+}
+
+element normal.urgent {
+    background-color: transparent;
+    text-color:       @red;
+}
+
+element normal.active {
+    background-color: transparent;
+    text-color:       @green;
+}
+
+element selected.normal {
+    background-color: @surface0;
+    text-color:       @blue;
+}
+
+element selected.urgent {
+    background-color: @surface0;
+    text-color:       @red;
+}
+
+element selected.active {
+    background-color: @surface0;
+    text-color:       @green;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @text;
+}
+
+scrollbar {
+    background-color: @base;
+    handle-color:     @surface1;
+    handle-width:     4px;
+    border-radius:    2px;
+}
