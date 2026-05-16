@@ -5,6 +5,7 @@
 # =========================
 
 sxhkd &
+setxkbmap latam &
 picom --config ~/.config/picom/picom.conf &
 nitrogen --restore &
 ~/.config/polybar/launch.sh &
