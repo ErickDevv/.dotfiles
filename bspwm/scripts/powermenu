@@ -1,0 +1,20 @@
+#!/bin/sh
+
+shutdown="󰐥  Apagar"
+reboot="󰑐  Reiniciar"
+suspend="󰤄  Suspender"
+logout="󰗽  Cerrar sesión"
+
+chosen=$(printf "%s\n%s\n%s\n%s" "$shutdown" "$reboot" "$suspend" "$logout" \
+    | rofi -dmenu \
+           -p "" \
+           -theme ~/.config/rofi/themes/powermenu.rasi \
+           -no-fixed-num-lines \
+           -theme-str 'listview { lines: 4; }')
+
+case "$chosen" in
+    "$shutdown")  systemctl poweroff ;;
+    "$reboot")    systemctl reboot ;;
+    "$suspend")   systemctl suspend ;;
+    "$logout")    bspc quit ;;
+esac

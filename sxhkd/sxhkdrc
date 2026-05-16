@@ -13,6 +13,9 @@ super + q
 super + alt + r
     bspc wm -r
 
+super + alt + p
+    ~/.config/polybar/launch.sh
+
 super + {h,j,k,l}
     bspc node -f {west,south,north,east}
 
@@ -27,3 +30,6 @@ super + {1-9}
 
 super + shift + {1-9}
     bspc node -d '^{1-9}'
+
+super + alt + s
+    ~/Documentos/.dotfiles/sync.sh

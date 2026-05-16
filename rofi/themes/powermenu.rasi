@@ -1,0 +1,84 @@
+* {
+    crust:    #11111b;
+    base:     #1e1e2e;
+    surface0: #313244;
+    text:     #cdd6f4;
+    subtext1: #bac2de;
+    blue:     #89b4fa;
+    red:      #f38ba8;
+    yellow:   #f9e2af;
+
+    background-color: transparent;
+    text-color:       @text;
+}
+
+window {
+    background-color: @crust;
+    border:           2px solid;
+    border-color:     @blue;
+    border-radius:    12px;
+    width:            360px;
+    location:         center;
+    anchor:           center;
+}
+
+mainbox {
+    background-color: transparent;
+    padding:          16px;
+    spacing:          8px;
+    children:         [message, listview];
+}
+
+message {
+    background-color: transparent;
+    padding:          0 0 6px 0;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:       @subtext1;
+    horizontal-align: center;
+    font:             "JetBrainsMono Nerd Font Bold 11";
+    content:          "Sistema";
+}
+
+listview {
+    background-color: transparent;
+    lines:            4;
+    columns:          1;
+    spacing:          4px;
+    scrollbar:        false;
+    padding:          4px 0;
+}
+
+element {
+    background-color: transparent;
+    border-radius:    8px;
+    padding:          10px 16px;
+    spacing:          14px;
+    children:         [element-icon, element-text];
+    cursor:           pointer;
+    orientation:      horizontal;
+}
+
+element-icon {
+    background-color: transparent;
+    size:             22px;
+    vertical-align:   0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:       @text;
+}
+
+element selected.normal {
+    background-color: @surface0;
+    text-color:       @blue;
+}
