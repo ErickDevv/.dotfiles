@@ -1,1 +1,5 @@
+.cache/
+.local/
+*.log
+*.tmp
 node_modules/

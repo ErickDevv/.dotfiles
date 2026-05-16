@@ -1,0 +1,127 @@
+#!/bin/sh
+
+# =========================
+# AUTOSTART
+# =========================
+
+sxhkd &
+picom --config ~/.config/picom/picom.conf &
+nitrogen --restore &
+~/.config/polybar/launch.sh &
+
+# =========================
+# BSPWM DESKTOPS
+# =========================
+
+bspc monitor -d I II III IV V VI VII VIII IX
+
+# =========================
+# APARIENCIA
+# =========================
+
+bspc config border_width         3
+bspc config window_gap           14
+
+bspc config split_ratio          0.52
+
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config top_padding          35
+bspc config bottom_padding       5
+bspc config left_padding         5
+bspc config right_padding        5
+
+# =========================
+# COLORES
+# =========================
+
+bspc config focused_border_color "#89b4fa"
+bspc config active_border_color  "#cba6f7"
+bspc config normal_border_color  "#313244"
+bspc config presel_feedback_color "#f38ba8"
+
+# =========================
+# FOCUS
+# =========================
+
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus false
+
+# =========================
+# VENTANAS
+# =========================
+
+bspc config click_to_focus button1
+bspc config pointer_modifier mod4
+
+# =========================
+# REGLAS
+# =========================
+
+# Terminal flotante
+bspc rule -a floating state=floating center=on
+
+# Pavucontrol flotante
+bspc rule -a Pavucontrol state=floating center=on
+
+# Nitrogen flotante
+bspc rule -a Nitrogen state=floating center=on
+
+# Lxappearance flotante
+bspc rule -a Lxappearance state=floating center=on
+
+# Feh flotante
+bspc rule -a feh state=floating center=on
+
+# Zathura abre en escritorio 3
+bspc rule -a Zathura desktop='^3'
+
+# Brave en escritorio 2
+bspc rule -a Brave-browser desktop='^2'
+
+# Kitty en escritorio 1
+bspc rule -a kitty desktop='^1'
+
+# =========================
+# AUTOMATIC TILING
+# =========================
+
+bspc config automatic_scheme longest_side
+bspc config initial_polarity second_child
+
+# =========================
+# MOVIMIENTO Y RESIZE
+# =========================
+
+bspc config pointer_motion_interval 10
+
+# =========================
+# MONOCLE
+# =========================
+
+bspc config single_monocle false
+
+# =========================
+# HISTORIAL
+# =========================
+
+bspc config removal_adjustment true
+
+# =========================
+# CURSOR
+# =========================
+
+xsetroot -cursor_name left_ptr
+
+# =========================
+# XRDB
+# =========================
+
+xrdb -merge ~/.Xresources
+
+# =========================
+# WALLPAPER FALLBACK
+# =========================
+
+feh --bg-fill ~/Pictures/wallpapers/default.jpg 2>/dev/null &

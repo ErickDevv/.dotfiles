@@ -1,0 +1,26 @@
+super + Return
+    kitty
+
+super + d
+    rofi -show drun
+
+super + q
+    bspc node -c
+
+super + alt + r
+    bspc wm -r
+
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+super + shift + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+super + alt + {h,j,k,l}
+    ~/.config/bspwm/scripts/resize {west,south,north,east}
+
+super + {1-9}
+    bspc desktop -f '^{1-9}'
+
+super + shift + {1-9}
+    bspc node -d '^{1-9}'

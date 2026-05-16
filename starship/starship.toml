@@ -1,0 +1,43 @@
+add_newline = false
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$rust\
+$golang\
+$java\
+$python\
+$docker_context\
+$character
+"""
+
+[directory]
+style = "bold cyan"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
+
+[java]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[golang]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
