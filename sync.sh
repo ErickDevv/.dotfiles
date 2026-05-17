@@ -7,6 +7,7 @@ for dir in bspwm sxhkd polybar picom kitty ranger rofi; do
     rsync -a "$DOTFILES/$dir/" ~/.config/$dir/
 done
 
+rm -f ~/.config/starship.toml
 cp "$DOTFILES/starship/starship.toml" ~/.config/starship.toml
 
 chmod +x ~/.config/bspwm/bspwmrc
