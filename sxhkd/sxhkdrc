@@ -13,6 +13,10 @@ super + q
 super + alt + r
     bspc wm -r
 
+# Recargar sxhkd (para que lea cambios en este archivo)
+super + ctrl + r
+    pkill -USR1 -x sxhkd
+
 super + alt + p
     ~/.config/polybar/launch.sh
 
@@ -28,8 +32,14 @@ super + alt + {h,j,k,l}
 super + {1-9}
     bspc desktop -f '^{1-9}'
 
+super + {KP_1,KP_2,KP_3,KP_4,KP_5,KP_6,KP_7,KP_8,KP_9,KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior}
+    bspc desktop -f '^{1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9}'
+
 super + shift + {1-9}
     bspc node -d '^{1-9}'
+
+super + shift + {KP_1,KP_2,KP_3,KP_4,KP_5,KP_6,KP_7,KP_8,KP_9,KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior}
+    bspc node -d '^{1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9}'
 
 super + alt + s
     ~/Documentos/.dotfiles/sync.sh
