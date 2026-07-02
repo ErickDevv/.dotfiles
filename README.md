@@ -1,6 +1,6 @@
 # .dotfiles
 
-Config personal para BSPWM en Linux.º
+Config personal para BSPWM en Linux.
 
 ## Componentes
 
