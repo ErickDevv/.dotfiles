@@ -19,7 +19,23 @@ Config personal para BSPWM en Linux.
 ```bash
 git clone https://github.com/ErickDevv/.dotfiles ~/Documentos/.dotfiles
 cd ~/Documentos/.dotfiles
-bash install.sh
+./welcome.sh
+```
+
+`welcome.sh` es el instalador interactivo:
+
+- Detecta el gestor de paquetes (por ahora solo **APT**) y, si lo encuentra, ofrece instalar las predependencias vía `setup.sh`.
+- Comprueba qué programas (bspwm, sxhkd, polybar, picom, kitty, rofi, starship) están instalados.
+- Detecta el entorno de escritorio actual.
+- Muestra un menú para elegir qué configs symlinkear a `~/.config`:
+  - `↑/↓` mover, `espacio` marcar, `a` marcar/desmarcar todas, `v` previsualizar la config seleccionada, `Enter` confirmar, `q`/`Esc` salir.
+  - Cada config muestra su estado de sincronización: `sincronizado`, `diferente` o `no instalado` (compara el archivo/carpeta del repo contra lo instalado en `~/.config`).
+- Si el entorno es bspwm, ofrece reiniciar bspwm/sxhkd al terminar.
+
+`setup.sh` instala las predependencias del sistema y acepta el gestor de paquetes como parámetro (por defecto `apt`, único soportado por ahora):
+
+```bash
+./setup.sh apt
 ```
 
 ## Keybindings
@@ -84,5 +100,6 @@ bash install.sh
 │   └── kitty.conf
 ├── starship/
 │   └── starship.toml
-└── install.sh
+├── setup.sh
+├── welcome.sh
 ```
